@@ -3,10 +3,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     kotlin("jvm") version "1.7.10"
     id("com.github.johnrengelman.shadow") version "7.0.0"
+    `maven-publish`
 }
 
 group = "co.pvphub"
-version = "1.0-SNAPSHOT"
+version = "-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -18,6 +19,15 @@ repositories {
     }
     maven {
         url = uri("https://repo.dmulloy2.net/repository/public/")
+    }
+
+    maven {
+        name = "PvPHub"
+        url = uri("https://maven.pvphub.me/releases")
+        credentials {
+            username = System.getenv("PVPHUB_MAVEN_USERNAME")
+            password = System.getenv("PVPHUB_MAVEN_SECRET")
+        }
     }
 }
 
@@ -42,4 +52,23 @@ tasks {
 tasks.withType<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar> {
     archiveBaseName.set("protocollibdsl")
     mergeServiceFiles()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "pvphub-releases"
+            url = uri("https://maven.pvphub.me/releases")
+            credentials {
+                username = System.getenv("PVPHUB_MAVEN_USERNAME")
+                password = System.getenv("PVPHUB_MAVEN_SECRET")
+            }
+        }
+    }
+    publications {
+        create<MavenPublication>("protocollibdsl") {
+            from(components["java"])
+        }
+    }
+
 }
