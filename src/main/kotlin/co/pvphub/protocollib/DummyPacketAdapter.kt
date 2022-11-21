@@ -1,4 +1,4 @@
-package co.pvphub.procotollib
+package co.pvphub.protocollib
 
 import com.comphenix.protocol.PacketType
 import com.comphenix.protocol.events.ListenerPriority

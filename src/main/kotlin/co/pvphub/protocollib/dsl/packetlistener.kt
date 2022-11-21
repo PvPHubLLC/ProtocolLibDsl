@@ -1,6 +1,6 @@
-package co.pvphub.procotollib.dsl
+package co.pvphub.protocollib.dsl
 
-import co.pvphub.procotollib.DummyPacketAdapter
+import co.pvphub.protocollib.DummyPacketAdapter
 import com.comphenix.protocol.PacketType
 import com.comphenix.protocol.ProtocolLibrary
 import com.comphenix.protocol.events.ListenerPriority

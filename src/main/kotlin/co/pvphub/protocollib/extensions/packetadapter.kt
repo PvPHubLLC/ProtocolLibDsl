@@ -1,4 +1,4 @@
-package co.pvphub.procotollib.extensions
+package co.pvphub.protocollib.extensions
 
 import com.comphenix.protocol.ProtocolLibrary
 import com.comphenix.protocol.events.PacketAdapter

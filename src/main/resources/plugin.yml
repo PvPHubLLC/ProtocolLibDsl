@@ -1,6 +1,11 @@
-main: co.pvphub.packetcrystals.PacketCrystals
+main: co.pvphub.protocollib.example.ExamplePlugin
 name: ProtocolLibDsl
 authors:
   - MattMX
-api-version: 1.8
+api-version: 1.15
+depend:
+  - ProtocolLib
 version: 1.0
+commands:
+  packetdsl:
+    description: Example packets made with our dsl

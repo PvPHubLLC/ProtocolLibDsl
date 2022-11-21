@@ -1,4 +1,4 @@
-package co.pvphub.procotollib.dsl
+package co.pvphub.protocollib.dsl
 
 import com.comphenix.protocol.PacketType
 import com.comphenix.protocol.ProtocolLibrary
