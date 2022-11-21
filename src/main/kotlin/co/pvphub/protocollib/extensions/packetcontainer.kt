@@ -38,6 +38,10 @@ fun PacketContainer.broadcast(location: Location, maxObserverDistance: Int) {
     ProtocolLibrary.getProtocolManager().broadcastServerPacket(this, location, maxObserverDistance)
 }
 
+infix operator fun <T> StructureModifier<T>.plusAssign(value: Pair<T, Int>) {
+    write(value.second, value.first)
+}
+
 infix operator fun <T> StructureModifier<T>.plus(value: T) : Pair<StructureModifier<T>, T> {
     return Pair(this, value)
 }
